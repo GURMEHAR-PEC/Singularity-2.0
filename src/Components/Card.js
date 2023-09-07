@@ -8,7 +8,7 @@ export default function Card(props) {
                 <img src={props.logo}/>
                 <h1> {props.title} </h1>
                 <p> {props.desc} </p>
-                <a href={props.link}>
+                <a href={props.link} target="_blank">
                     <h3> Read more </h3>
                 </a>
             </div>

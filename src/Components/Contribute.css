@@ -132,10 +132,10 @@
   
   .mainform {
     width: 55%;
-    padding: 30px;
+    padding: 15px 30px;
     position: relative;
     left: 150px;
-    height: 77%;
+    height: 82%;
     top: 40px;
     box-shadow: -0.5rem -0.5rem rgb(31, 95, 213), 0.5rem 0.5rem rgb(63, 117, 218);
   }
@@ -184,9 +184,10 @@
   
   .form-button button {
     position: relative;
-    right: 8px;
+    bottom: 16px;
+    right: 0px;
     padding: 4px;
-    width: 381px;
+    width: 385px;
     font-size: 23px;
     cursor: pointer;
     border: 2px solid rgb(66, 9, 9);

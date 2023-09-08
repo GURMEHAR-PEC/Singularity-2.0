@@ -45,7 +45,7 @@ function Card(props) {
             <h1> {props.title} </h1>
             <h3> Branch : {props.Branch} </h3>
             <h3> Semester : {props.Sem} </h3>
-            <a href={props.link}>
+            <a href={props.link} target="_blank">
               <h3> Click to view resource </h3>
             </a>
           </div>
@@ -62,7 +62,7 @@ function Card(props) {
           <h1> {props.title} </h1>
           <h2> Branch : {props.Branch} </h2>
           <h2> Semester : {props.Sem} </h2>
-          <a href={props.link}>
+          <a href={props.link} target="_blank">
             <h3> Click to view resource </h3>
           </a>
         </div>

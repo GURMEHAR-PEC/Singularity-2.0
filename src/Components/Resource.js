@@ -7,54 +7,67 @@ export default function Resources() {
   const [count1, setCount1] = React.useState(0);
   const [count2, setCount2] = useState(0);
   const [count3, setCount3] = useState(0);
-  const [seme, setSem] = useState(0);
+  const [Sem, setSem] = useState(0);
   const [Branch, setBranch] = React.useState("None");
   const [isOpen, setOpen] = React.useState(false)
   
-// function sortresources(){
-//     if(count1 && count2 && count3){
-//       {
-//       resources.map((el) => {
-//         if(em===el.Sem && Branch===el.Branch){
-//           return(
-//           <Card
-//           id={el.serialNo}
-//           title={el.name}
-//           Branch={el.Branch}
-//           Sem={el.Sem}
-//           desc={el.description}
-//           link={el.website}
-//         /> )
-//         }
-//       })}
-//     }
- 
-        
-//       else{
-//         return()
-//     }
-//       }
-
 function Card(props) {
   if(count1 && count2 && count3){
-    if(Branch==props.Branch && seme==props.Sem ) {
+    if(Branch==props.Branch && Sem==props.Sem ) {
       return (
         <>
           <div className='resourcesCard'>
-          <svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-folder"><path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z" /></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 24 24" fill="none" stroke="#5B85AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-folder"><path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z" /></svg>
             <h1> {props.title} </h1>
             <h3> Branch : {props.Branch} </h3>
             <h3> Semester : {props.Sem} </h3>
-            <a href={props.link} target="_blank">
+            <a href={props.link} target="_blank" rel="noreferrer">
               <h3> Click to view resource </h3>
             </a>
           </div>
         </>)
     }
+    
+  }
+  else if(count1 && count3){
+    if(Sem==props.Sem ) {
+      return (
+        <>
+          <div className='resourcesCard'>
+          <svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 24 24" fill="none" stroke="#5B85AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-folder"><path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z" /></svg>
+            <h1> {props.title} </h1>
+            <h3> Branch : {props.Branch} </h3>
+            <h3> Semester : {props.Sem} </h3>
+            <a href={props.link} target="_blank" rel="noreferrer">
+              <h3> Click to view resource </h3>
+            </a>
+          </div>
+        </>)
+    }
+    
+  }
+
+  else if(count2 && count3){
+    if(Branch==props.Branch ) {
+      return (
+        <>
+          <div className='resourcesCard'>
+          <svg xmlns="http://www.w3.org/2000/svg" width="180" height="180" viewBox="0 0 24 24" fill="none" stroke="#5B85AA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-folder"><path d="M4 20h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.93a2 2 0 0 1-1.66-.9l-.82-1.2A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13c0 1.1.9 2 2 2Z" /></svg>
+            <h1> {props.title} </h1>
+            <h3> Branch : {props.Branch} </h3>
+            <h3> Semester : {props.Sem} </h3>
+            <a href={props.link} target="_blank" rel="noreferrer">
+              <h3> Click to view resource </h3>
+            </a>
+          </div>
+        </>)
+    }
+    
   }
  
   
   else{
+    
     return (
       <>
         <div className='resourcesCard'>
@@ -62,7 +75,7 @@ function Card(props) {
           <h1> {props.title} </h1>
           <h2> Branch : {props.Branch} </h2>
           <h2> Semester : {props.Sem} </h2>
-          <a href={props.link} target="_blank">
+          <a href={props.link} target="_blank" rel="noreferrer" >
             <h3> Click to view resource </h3>
           </a>
         </div>
@@ -86,8 +99,11 @@ function Takeinput1() {
   const handleChange = (event) => {
     setSem(event.target.value);
     setCount3(0);
-    if(count1===0){
+    if(count1==0){
       setCount1(1);
+    }
+    if(event.target.value==0){
+      setCount1(0);
     }
   };
   return (
@@ -95,7 +111,7 @@ function Takeinput1() {
       <Dropdown
         label="Semester "
         options={options}
-        value={seme}
+        value={Sem}
         onChange={handleChange}
       />
     </div>
@@ -130,8 +146,11 @@ function Takeinput2() {
   const handleChange = (event) => {
     setBranch(event.target.value);
     setCount3(0);
-    if(count2===0){
+    if(count2==0){
       setCount2(1);
+    }
+    if(event.target.value=='None'){
+      setCount2(0);
     }
   };
   return (
@@ -149,27 +168,21 @@ function Takeinput2() {
 };
 const handleSubmit = (event) => {
 
-    setCount3(1);
+  setCount3(1);
 
   
 }
 const handleReset = (event) => {
 
   setCount3(0);
+  setCount1(0);
+  setCount2(0);
+  setBranch('None');
+  setSem('0');
   
 }
 
-function handlesubmit() {
-  if(count1 && count2){
-    if(count3===0){
-      setCount3(1);
-  }
-  else{
-    alert("Fill all necessary fields")
-  }
 
-  }
-};
   return (
     <>
       <div className='pageContainer'>

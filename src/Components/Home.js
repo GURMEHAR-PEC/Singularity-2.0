@@ -15,7 +15,7 @@ export default function Home() {
     return (
         <div className='pageContainer'>
             <div className='homeHeader'>
-                <h1 className='homeHeaderTitle'> Singularity </h1>
+                <h1 className='homeHeaderTitle'>Singularity.....</h1>
                 <pre className='homeHeaderText'> The endpoint of your search <br/> for college resources and information. </pre>
             </div>
             <div className='spaceDivider'></div>

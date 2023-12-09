@@ -13,7 +13,33 @@
     font-size: 4em;
     margin-bottom: 0px;
     color: white;
+    position: relative;
 }
+.homeHeaderTitle::after{
+    content: '|';
+    
+    font-weight: 100;
+    position: absolute;
+    right: 0;
+    color: white;
+    background-color: navy;
+    width: 100%;
+    animation: typing 2.5s steps(18) alternate infinite,
+                line 1s infinite;
+}
+@keyframes typing {
+    to{
+        width: 0%;
+    }
+
+}
+@keyframes line {   
+    50%{
+        color:transparent;
+    }
+    
+}
+
 
 .homeHeaderText {
     font-size: 2em;
